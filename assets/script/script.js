@@ -34,7 +34,8 @@ tipButtons.forEach(button => {
         tipButtons.forEach(button => {
             button.classList.remove('active')
         })
-
+        tipCustom.value = ""
+        
         event.target.classList.add('active')
 
         calcTip()
@@ -58,9 +59,11 @@ function calcTip() {
     if (parseInt(peopleInput.value) === 0 || Number.isNaN(parseInt(peopleInput.value))) {
         console.log('Não existe divisão por zero. Você quer criar um buraco negro por acaso?')
         peopleInput.classList.add('error')
+        document.querySelector('#message').classList.add('error')
         return
     }
 
+    document.querySelector('#message').classList.remove('error')
     peopleInput.classList.remove('error')
 
     let tipPerPerson = (totalBill - billInput.value) / parseInt(peopleInput.value)
