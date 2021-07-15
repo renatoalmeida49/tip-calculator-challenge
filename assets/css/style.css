@@ -49,6 +49,15 @@ input {
     background-repeat: no-repeat;
     background-position: 5% 50%;
     margin-bottom: 20px;
+    cursor: pointer;
+}
+input:focus {
+    outline: none;
+    border: 2px solid hsl(167, 61%, 48%);;
+}
+input.error {
+    outline: none;
+    border: 2px solid red;
 }
 input.input-bill {
     background-image: url('../images/icon-dollar.svg');
@@ -59,6 +68,9 @@ input.input-people-number {
 /*--------------------*/
 /*----- SELECT AREA
 /*--------------------*/
+.select-area {
+    margin-bottom: 20px;
+}
 .title {
     font-weight: 700;
     color: hsl(186, 14%, 43%);
@@ -81,6 +93,15 @@ input.input-people-number {
     border-radius: 4px;
     padding: 6px 0;
     cursor: pointer;
+}
+.button-tip.active {
+    color: hsl(183, 100%, 15%);
+    background: hsl(167, 61%, 48%);
+}
+.button-tip.custom {
+    color: hsl(184, 14%, 56%);
+    background: hsl(189, 41%, 97%);
+    padding-right: 10px;
 }
 /*--------------------*/
 /*----- RESULT AREA
@@ -111,7 +132,7 @@ input.input-people-number {
 .value {
     font-weight: 700;
     font-size: 24px;
-    color: hsl(185, 41%, 84%);
+    color: hsl(167, 61%, 48%);
 }
 .reset-button {
     width: 100%;
@@ -119,10 +140,11 @@ input.input-people-number {
     border: none;
     color: hsl(183, 100%, 15%);
     font-weight: 700;
-    background: hsl(185, 41%, 84%);
+    background: hsl(167, 61%, 48%);;
     font-size: 24px;
     border-radius: 4px;
     padding: 7px;
+    cursor: pointer;
 }
 
 /*--------------------*/
@@ -139,4 +161,34 @@ input.input-people-number {
 }
 .attribution a {
     color: hsl(228, 45%, 44%);
+}
+
+/*--------------------*/
+/*----- MEDIA QUERIES
+/*--------------------*/
+@media (min-width: 768px) {
+    .content {
+        display: flex;
+        height: auto;
+        width: 100%;
+        max-width: 768px;
+        justify-content: space-between;
+        margin: auto;
+        border-radius: 20px;
+    }
+
+    .input-options,
+    .result-area {
+        width: 45%;
+    }
+
+    .result-area {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .value {
+        font-size: 38px;
+    }
 }
