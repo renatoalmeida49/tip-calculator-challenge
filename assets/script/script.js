@@ -1,3 +1,5 @@
+import formatter from './modules/formatter.js'
+
 let billInput = document.querySelector('#bill')
 let peopleInput = document.querySelector('#people-number')
 
@@ -35,7 +37,7 @@ tipButtons.forEach(button => {
             button.classList.remove('active')
         })
         tipCustom.value = ""
-        
+
         event.target.classList.add('active')
 
         calcTip()
@@ -69,17 +71,7 @@ function calcTip() {
     let tipPerPerson = (totalBill - billInput.value) / parseInt(peopleInput.value)
     let valuePerPerson = totalBill / parseInt(peopleInput.value)
 
-    formater(tipPerPerson, valuePerPerson)
+    tipPerPersonValue.innerHTML = formatter(tipPerPerson)
+    billPerPersonValue.innerHTML = formatter(valuePerPerson)
 }
 
-function formater(tipPerPerson, valuePerPerson) {
-    tipPerPersonValue.innerHTML = tipPerPerson.toLocaleString("en-US", {
-        style: "currency",
-        currency: "USD",
-      })
-
-    billPerPersonValue.innerHTML = valuePerPerson.toLocaleString("en-US", {
-        style: "currency",
-        currency: "USD",
-      })
-}
