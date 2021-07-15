@@ -36,14 +36,19 @@ label {
     margin-bottom: 5px;
 
 }
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
 input {
+    -webkit-appearance: none;
     width: 100%;
     background: hsl(189, 41%, 97%);
     border: none;
     color: hsl(183, 100%, 15%);
     font-weight: 700;
     font-size: 24px;
-    padding: 5px;
+    padding: 5px 15px;
     border-radius: 8px;
     text-align: end;
     background-repeat: no-repeat;
