@@ -17,51 +17,51 @@
   <img src="./assets/images/logo.svg" alt="App logo" class="img-logo"/>
 
   <div class="content">
-    <p>Bill</p>
+    <label for="bill">Bill</label>
 
-    <input type="number" />
+    <input id="bill" name="bill" class="input-bill" type="number" />
 
-    <div>
-      <p>Select Tip %</p>
+    <div class="select-area">
+      <p class="title">Select Tip %</p>
 
-      <div>
-        <button>5%</button>
-        <button>10%</button>
-        <button>15%</button>
-        <button>25%</button>
-        <button>50%</button>
-        <button>Custom</button>
+      <div class="buttons-area">
+        <button class="button-tip">5%</button>
+        <button class="button-tip">10%</button>
+        <button class="button-tip">15%</button>
+        <button class="button-tip">25%</button>
+        <button class="button-tip">50%</button>
+        <button class="button-tip">Custom</button>
       </div>
     </div>
 
-    <p>Number of People</p>
+    <label for="people-number">Number of People</label>
 
-    <input type="number" />
+    <input id="people-number" name="people-number" class="input-people-number" type="number" />
 
-    <div>
-      <div>
-        <div>
-          <span>Tip Amount</span>
-          <span>/ person</span>
+    <div class="result-area">
+      <div class="tip-amount">
+        <div class="description">
+          <span class="main-description">Tip Amount</span>
+          <span class="per-description">/ person</span>
         </div>
 
-        <div>
+        <div class="value">
           $ 4.27
         </div>
       </div>
 
-      <div>
-        <div>
-          <span>Total</span>
-          <span>/ person</span>
+      <div class="total">
+        <div class="description">
+          <span class="main-description">Total</span>
+          <span class="per-description">/ person</span>
         </div>
 
-        <div>
+        <div class="value">
           $ 32.79
         </div>
       </div>
 
-      <button>Reset</button>
+      <button class="reset-button">Reset</button>
     </div>
 
     
