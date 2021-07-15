@@ -4,12 +4,35 @@ let peopleInput = document.querySelector('#people-number')
 let tipPerPersonValue = document.querySelector('#tipPerPersonValue')
 let billPerPersonValue = document.querySelector('#billPerPersonValue')
 
+let tipButtons = document.querySelectorAll('button.button-tip')
+
+let resetButton = document.querySelector('.reset-button')
+
+resetButton.addEventListener('click', () => {
+    billInput.value = ""
+    peopleInput.value = ""
+
+    formater(0, 0)
+})
+
 billInput.addEventListener('keyup', () => {
     calcTip()
 })
 
 peopleInput.addEventListener('keyup', () => {
     calcTip()
+})
+
+tipButtons.forEach(button => {
+    button.addEventListener('click', event => {
+        tipButtons.forEach(button => {
+            button.classList.remove('active')
+        })
+
+        event.target.classList.add('active')
+
+        calcTip()
+    })
 })
 
 function calcTip() {
