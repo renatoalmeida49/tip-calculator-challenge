@@ -8,11 +8,17 @@ let tipButtons = document.querySelectorAll('button.button-tip')
 
 let resetButton = document.querySelector('.reset-button')
 
+let tipCustom = document.querySelector('#custom')
+
 resetButton.addEventListener('click', () => {
     billInput.value = ""
     peopleInput.value = ""
 
     formater(0, 0)
+})
+
+tipCustom.addEventListener('keyup', () => {
+    calcTip()
 })
 
 billInput.addEventListener('keyup', () => {
@@ -36,7 +42,16 @@ tipButtons.forEach(button => {
 })
 
 function calcTip() {
-    let tipValue = document.querySelector('.button-tip.active').dataset.tip
+    let custom = document.querySelector('#custom').value
+    let tipValue
+    
+    if (custom === "") {
+        console.log('if')
+        tipValue = document.querySelector('.button-tip.active').dataset.tip
+    } else {
+        console.log('else')
+        tipValue = custom
+    }
 
     let totalBill = parseInt(billInput.value) + (tipValue * billInput.value / 100)
 
