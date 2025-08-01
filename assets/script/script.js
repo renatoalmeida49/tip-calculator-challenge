@@ -1,5 +1,7 @@
 import formatter from './modules/formatter.js'
 
+// testing commit
+
 let billInput = document.querySelector('#bill')
 let peopleInput = document.querySelector('#people-number')
 
